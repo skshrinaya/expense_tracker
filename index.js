@@ -1,11 +1,15 @@
 const express = require('express')
+const bodyParser=require('body-parser')
 const app = express()
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 const static = express.static('static');
 app.use("/",static);
 
-app.get("/hi",(req,res)=>{
-    console.log(req.query)
+app.post("/hi",(req,res)=>{
+    console.log(req.body)
     //res.send("hello World")
     //http://localhost:4000/hi?phone=12
     /**
@@ -15,7 +19,13 @@ app.get("/hi",(req,res)=>{
      * ?key=value
      */
     res.json({
-        form:req.query,
+        name:req.body.name,
+        description:req.body.description,
+        amount:req.body.amount,
+        date:req.body.date,
+
+
+        //form:req.query,
         //phone:req.query.phone*10
     });
 });
