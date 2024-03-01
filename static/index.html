@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheets" ahref="index.css">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
-    <h1>Hi</h1>
+    <h1>Form</h1>
+    <form action="/hi">
+        <div class="Fields"><label for="name">Name:</label><br>
+            <input type="text" id ="name" name="name"><br>
+    
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description"></textarea><br>
+    
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date"><br>
+    
+            <label for="amount">Amount:</label><br>
+            <input type="number" id="amount" name="amount"><br>
+    
+            <input type="submit" value="Submit"></div>
+        
+    </form>
+    
     <script src="index.js"></script>
 </body>
 </html>
